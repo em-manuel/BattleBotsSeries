@@ -1,29 +1,29 @@
-// Bare Minimum code for Bluetooth control for RC. 
-// Feel free to modify, improve code to suite your need. 
-// Customised for arduno Bluetooth controller app from play store. 
-// Any arduino BLE app wll work, however. 
-// Developed to use inbuilt Bluetooth low energy (BLE) for ESP32 MCU. 
-// Note: There might be interferance if many devices are used together. 
-// Be sure to rename your device bluetooth's name. 
+// Bare Minimum code for Bluetooth control for RC.
+// Feel free to modify, improve code to suite your need.
+// Customised for arduno Bluetooth controller app from play store.
+// Any arduino BLE app wll work, however.
+// Developed to use inbuilt Bluetooth low energy (BLE) for ESP32 MCU.
+// Note: There might be interferance if many devices are used together.
+// Be sure to rename your device bluetooth's name.
 
-#include "BluetoothSerial.h" // include bluetooth libraries. 
+#include "BluetoothSerial.h"  // include bluetooth libraries.
 
-BluetoothSerial SerialBT; // Initialise. 
+BluetoothSerial SerialBT;  // Initialise.
 
-// Define motor pins -> motor driver must be connected to these pins. 
-// if device behaves in reverse, swap pins in code or wirinf. 
+// Define motor pins -> motor driver must be connected to these pins.
+// if device behaves in reverse, swap pins in code or wirinf.
 #define IN1 27
 #define IN2 26
 #define IN3 25
 #define IN4 33
 
-// Keep checking for a BLE connections. 
+// Keep checking for a BLE connections.
 unsigned long lastBTCheck = 0;
 const unsigned long btCheckInterval = 20000;  // 1 second
 
 void setup() {
   Serial.begin(115200);
-  SerialBT.begin("SoccerBot_Gr_ESP32");  // Bluetooth name
+  SerialBT.begin("MSGarageSoccerBot-Simba");  // Bluetooth name
   Serial.println("Bluetooth Started");
 
   pinMode(IN1, OUTPUT);
@@ -94,7 +94,7 @@ void loop() {
         break;
 
       case 'S':  // Stop
-        Stop(); 
+        Stop();
         break;
     }
   } else {
