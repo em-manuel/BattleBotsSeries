@@ -1,0 +1,50 @@
+# Bluetooth RC Car (ESP32)
+
+This is a simple Arduino sketch for controlling a **Bluetooth RC Car** using an **ESP32** and a **motor driver** (like L298N or L293D).
+
+---
+
+## 🚗 Overview
+
+- The ESP32 connects to your **smartphone via Bluetooth**.
+- You can use any **Bluetooth controller app** (like *Arduino Bluetooth Controller* from Play Store).
+- Send commands (F, B, L, R, S) to move the robot **Forward**, **Backward**, **Left**, **Right**, or **Stop**.
+- The car’s Bluetooth name is:  
+  **`MSGarageSoccerBot-Samaki`**
+
+---
+
+## ⚙️ Hardware Setup
+
+| Motor Driver Pin | ESP32 Pin |
+|------------------|-----------|
+| IN1              | 27        |
+| IN2              | 26        |
+| IN3              | 25        |
+| IN4              | 33        |
+
+🔁 *If your motors run in reverse, swap the IN pins in code or wiring.*
+
+---
+
+## 📲 Connecting via Smartphone
+
+1. Turn on your robot car.
+2. Open your Bluetooth control app on your phone.
+3. Connect to the device named **MSGarageSoccerBot-Samaki**.
+4. Use the buttons to send commands:
+   - **F** → Move Forward  
+   - **B** → Move Backward  
+   - **L** → Turn Left  
+   - **R** → Turn Right  
+   - **S** → Stop
+
+---
+
+## 🧩 Notes
+
+- Uses ESP32’s built-in **Bluetooth Serial** (not BLE mode).
+- Avoid using many Bluetooth devices nearby to reduce interference.
+- You can rename your Bluetooth car in the line:
+  ```cpp
+  SerialBT.begin("MSGarageSoccerBot-Samaki");

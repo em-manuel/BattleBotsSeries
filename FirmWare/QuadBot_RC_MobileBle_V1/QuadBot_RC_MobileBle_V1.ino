@@ -23,7 +23,7 @@ const unsigned long btCheckInterval = 20000;  // 1 second
 
 void setup() {
   Serial.begin(115200);
-  SerialBT.begin("MSGarageSoccerBot-Simba");  // Bluetooth name
+  SerialBT.begin("MSGarageSoccerBot-Samaki");  // Bluetooth name
   Serial.println("Bluetooth Started");
 
   pinMode(IN1, OUTPUT);
